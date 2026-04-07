@@ -18,5 +18,5 @@ const CONFIG = {
   SIMPLE_MENU_TAG: true, // 显示标签
   SIMPLE_MENU_ARCHIVE: true, // 显示归档
   SIMPLE_MENU_SEARCH: true // 显示搜索
-}
-export default CONFIG
+};
+export default CONFIG;
