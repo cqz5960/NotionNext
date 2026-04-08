@@ -7,11 +7,11 @@ html {
 }
 
 /* 代码块的字体大小调整 */
+
 blockquote {
-  font-size: 1em !important; /* 比正文小 10%，可按需调整 */
+  font-size: 0.95em !important; /* 比正文小10%，可按需调整 */
   line-height: 1.8 !important; /* 行高适配，避免拥挤 */
 }
-
 
 .wrapper {
   min-height: 100vh;
