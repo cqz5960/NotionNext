@@ -956,6 +956,7 @@ code[class*='language-'] {
   white-space: pre-wrap;
   word-break: break-word;
   overflow: hidden;
+  line-height: 1.7; /* 标注块设置行间距 添加 by Hison */
 }
 
 .notion-callout-text .notion-text{
@@ -1682,7 +1683,7 @@ code[class*='language-'] {
 .notion-h-title {
   @apply leading-8;
   @apply p-0;
-  @apply my-3;
+  @apply my-4 !important; /* 由3调为4 by Hison */
 }
 .notion-page-link {
   color: inherit;
@@ -1978,11 +1979,12 @@ svg + .notion-page-title-text {
   width: 100%;
   white-space: pre-wrap;
   word-break: break-word;
-  border-left: 10px solid;
+  border-left: 2px solid !important;
   padding: 0.2em 0.9em;
   margin: 6px 0;
-  font-size: 1em;
+  font-size: 0.95em !important; /* 比正文小10%，可按需调整 by Hison */
   /* color: var(--notion-gray); */
+  line-height: 1.8 !important; /* 行高适配，避免拥挤 by Hison*/
 }
 
 /* .notion-asset-wrapper-pdf > div {
