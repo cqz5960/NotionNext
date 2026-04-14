@@ -1683,7 +1683,7 @@ code[class*='language-'] {
 .notion-h-title {
   @apply leading-8;
   @apply p-0;
-  @apply my-4 !important; /* 由3调为4 by Hison */
+  @apply my-1 !important; /* 调为2并强制 by Hison */
 }
 .notion-page-link {
   color: inherit;
