@@ -63,7 +63,6 @@ class MyDocument extends Document {
 
           {/* 预先设置深色模式，避免闪烁 */}
           <script dangerouslySetInnerHTML={{ __html: darkModeScript }} />
-          <meta name="baidu-site-verification" content="codeva-6ZMdD2kqWw" /> /* 百度验证添加 by Hison*/
         </Head>
 
         <body>
