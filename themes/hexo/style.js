@@ -9,7 +9,7 @@ import CONFIG from './config'
  */
 const Style = () => {
   // 从配置中获取主题色，如果没有配置则使用默认值 #928CEE
-  const themeColor = siteConfig('HEXO_THEME_COLOR', '#928CEE', CONFIG)
+  const themeColor = siteConfig('HEXO_THEME_COLOR', '#556B2F', CONFIG) // 改颜色 by Hison
 
   return (
     <style jsx global>{`
@@ -215,7 +215,7 @@ const Style = () => {
 
       // 自定义滚动条
       ::-webkit-scrollbar {
-        width: 5px;
+        width: 5px; 
         height: 5px;
       }
 
@@ -228,7 +228,7 @@ const Style = () => {
       }
 
       * {
-        scrollbar-width: thin;
+        scrollbar-width: auto; // 从thin更改为auto以加宽滚动条 by Hison
         scrollbar-color: var(--theme-color) transparent;
       }
     `}</style>
