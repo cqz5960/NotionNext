@@ -378,7 +378,7 @@ const getSEOMeta = (props, router, locale) => {
         slug: 'category',
         type: 'website'
       }
-    default:
+/*    default:
       return {
         title: post
           ? `${post?.title} | ${siteInfo?.title}`
@@ -389,6 +389,18 @@ const getSEOMeta = (props, router, locale) => {
         image: post?.pageCoverThumbnail || `${siteInfo?.pageCover}`,
         category: post?.category?.[0],
         tags: post?.tags
+      } 原版  */
+    default:
+      return {
+        title: post
+          ? `${post?.seo_title || post?.title} | ${siteInfo?.title}`
+          : `${siteInfo?.title} | loading`,
+        description: post?.summary,
+        type: post?.type,
+        slug: post?.slug,
+        image: post?.pageCoverThumbnail || `${siteInfo?.pageCover}`,
+        category: post?.category?.[0],
+        tags: post?.tags  /* 修改 by Hison */
       }
   }
 }
