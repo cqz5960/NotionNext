@@ -390,17 +390,30 @@ const getSEOMeta = (props, router, locale) => {
         category: post?.category?.[0],
         tags: post?.tags
       } 原版  */
+
     default:
+      // 逻辑优化：
+      // 1. 如果有手动设置的 seo_title，直接使用它（你已经在里面写了 | Hison Blog）
+      // 2. 如果只有普通 title，则自动拼接站点标题
+      // 3. 如果都没有（比如首页或 ID 页面），则显示“站点标题 | 站点描述”，防止出现 null
+      
+      let displayTitle = ''
+      if (post?.seo_title) {
+        displayTitle = post.seo_title 
+      } else if (post?.title) {
+        displayTitle = `${post.title} | ${siteInfo?.title}`
+      } else {
+        displayTitle = `${siteInfo?.title} | ${siteInfo?.description}`
+      }
+
       return {
-        title: post
-          ? `${post?.seo_title || post?.title} | ${siteInfo?.title}`
-          : `${siteInfo?.title} | loading`,
-        description: post?.summary,
-        type: post?.type,
+        title: displayTitle,
+        description: post?.summary || `${siteInfo?.description}`,
+        type: post?.type || 'website',
         slug: post?.slug,
         image: post?.pageCoverThumbnail || `${siteInfo?.pageCover}`,
         category: post?.category?.[0],
-        tags: post?.tags  /* 修改 by Hison */
+        tags: post?.tags /* 修改 by Hison */
       }
   }
 }
