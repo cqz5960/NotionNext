@@ -9,7 +9,7 @@ import CONFIG from './config'
  */
 const Style = () => {
   // 从配置中获取主题色，如果没有配置则使用默认值 #928CEE
-  const themeColor = siteConfig('HEXO_THEME_COLOR', '#556B2F', CONFIG) // 改颜色 by Hison
+  const themeColor = siteConfig('HEXO_THEME_COLOR', '#928CEE', CONFIG) 
 
   return (
     <style jsx global>{`
