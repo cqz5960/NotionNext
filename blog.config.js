@@ -65,7 +65,7 @@ const BLOG = {
   // 欢迎语打字效果,Hexo,Matery主题支持, 英文逗号隔开多个欢迎语。
   GREETING_WORDS:
     process.env.NEXT_PUBLIC_GREETING_WORDS ||
-    'Hi，我是Hison，一位热爱艺术的INFJ工科博士，欢迎来到我的博客',
+    'Hi，我是Hison，一个INFJ环境科学博士。主业搞科研，业余沉迷于摇滚乐、文学与电影，偶尔也写几行Python。很高兴在互联网的这个角落遇到你。',
 
   // uuid重定向至 slug
   UUID_REDIRECT: process.env.UUID_REDIRECT || false
