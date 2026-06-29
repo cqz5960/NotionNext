@@ -26,11 +26,6 @@ export async function getStaticProps(req) {
   const { locale } = req
   const from = 'index'
   const props = await fetchGlobalAllData({ from, locale })
-  
-    // 调试代码：把传给页面的原始 props 打印到终端控制台 by Hison
-  console.log("--- 正在检查首页注入的数据 ---");
-  console.log(JSON.stringify(props || {}, null, 2));//
-  
   const POST_PREVIEW_LINES = siteConfig(
     'POST_PREVIEW_LINES',
     12,
@@ -78,21 +73,6 @@ export async function getStaticProps(req) {
 
   delete props.allPages
 
-// 暴力拦截：如果网络不通抓到了空数据，强行把全站关键变量初始化为空数组，彻底封死 Next.js 的报错嘴巴 //by Hison
-if (!props || !props.allPages || props.allPages.length === 0) {
-  return {
-    props: {
-      allNavPages: [],
-      allPages: [],
-      latestPosts: [],
-      categoryOptions: [], // 强行变成空数组，拒绝 undefined
-      tagOptions: [],
-      siteInfo: { title: "Hison's Blog", description: "本地调试模式" }
-    },
-    revalidate: 1
-  }
-}//
-  
   return {
     props,
     revalidate: process.env.EXPORT
