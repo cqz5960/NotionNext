@@ -194,6 +194,12 @@ const nextConfig = {
       }
 
       return [
+        // Notion 图片代理：将 notion.
+        {
+          source: '/proxy/notion/:path*',
+          destination: 'https://www.notion.so/:path*'
+        },
+        // by Hison
         ...langsRewrites,
         // 伪静态重写
         {
